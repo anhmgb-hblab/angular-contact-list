@@ -5,6 +5,13 @@
   --main-background: #eeeeee;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   background-color: var(--main-background);
@@ -15,4 +22,25 @@ body {
   box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
   padding: 12px 16px;
   margin: 12px auto;
+  border-radius: 4px;
+}
+
+.fixed-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.interact-element {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
 }

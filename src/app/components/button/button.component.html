@@ -1,1 +1,8 @@
-<button class="btn" [class]="variant" (click)="handleClick()">{{ text }}</button>
+<button
+  class="btn interact-element"
+  [class]="variant"
+  [ngClass]="{'full-width': fullWidth}"
+  (click)="handleClick()"
+>
+  {{ text }}
+</button>

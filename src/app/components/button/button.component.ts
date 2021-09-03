@@ -14,6 +14,7 @@ import {
 export class ButtonComponent implements OnInit {
   @Input() text: string = '';
   @Input() variant: string = 'primary';
+  @Input() fullWidth: boolean = false;
   @Output() onClick = new EventEmitter();
 
   constructor() { }
