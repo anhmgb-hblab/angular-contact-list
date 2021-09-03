@@ -1,0 +1,22 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+
+  &__avatar {
+    margin-right: 16px;
+  }
+
+  &__info {
+    &__item {
+      margin-bottom: 4px;
+    }
+  }
+}
