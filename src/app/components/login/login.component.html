@@ -2,6 +2,7 @@
   <div class="title">Login</div>
   <app-input title="Email" [control]="formGroup.controls.email"></app-input>
   <app-input title="Password" type="password" [control]="formGroup.controls.password"></app-input>
+  <div *ngIf="isWrongCredential" class="error-message">Wrong credentials</div>
   <app-button class="login__submit-button" text="Login" [fullWidth]=true (onClick)="handleLogin()"></app-button>
   <a routerLink="/register" class="login__register interact-element">Don't have an account yet?</a>
 </form>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { checkMatchPassword } from '../../utils/validation.directive';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../../models/User';
+import { Router } from '@angular/router';
+import * as bcryptjs from 'bcryptjs';
 
 @Component({
   selector: 'app-register',
@@ -25,14 +29,35 @@ export class RegisterComponent implements OnInit {
       checkMatchPassword(),
     ])
   });
+  isExisted = false;
 
-  constructor() { }
+  private userApiUrl = 'http://localhost:5000/users';
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
   }
 
+  handleAuthentication(data) {
+    const { email, password } = this.formGroup.controls;
+    const user = data.find(user => user.email === email.value);
+    if (user) {
+      this.isExisted = true;
+      return;
+    }
+    const salt = bcryptjs.genSaltSync(10);
+    const hash = bcryptjs.hashSync(password.value, salt);
+    this.http.post<User[]>(this.userApiUrl, { email: email.value, password: hash }).subscribe(res => {
+      this.router.navigate(['/login']);
+    });
+  }
+
   handleRegister(): void {
-    console.log(this.formGroup);
+    this.isExisted = false;
+    if (this.formGroup.invalid) return;
+    this.http.get<User[]>(this.userApiUrl).subscribe(res => {
+      this.handleAuthentication(res);
+    });
   }
 
 }

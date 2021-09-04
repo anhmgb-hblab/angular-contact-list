@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "email": "mgbanh97@gmail.com",
+      "password": "$2a$10$J2yw9wh627SdpIBNVKpKt.pN6jBMRJzs7ZAp310fa5LNI0Y2dHhiW",
+      "id": 1
+    },
+    {
+      "email": "anhmgb@hblab.vn",
+      "password": "$2a$10$lIEm/XnjZiBQYDHlBmy.LOrMFs.Ek94Wsm.d0mKrgyf3bPk1ZgRh6",
+      "id": 2
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Mai Gia Bảo Anh",
+      "email": "anhmgb@gmail.com",
+      "tel": "01231231231",
+      "age": 24
+    },
+    {
+      "id": 2,
+      "name": "Đỗ Thị Mai",
+      "email": "maidt@gmail.vn",
+      "tel": "01234343234",
+      "age": 26
+    },
+    {
+      "id": 3,
+      "name": "Lê Minh Nghĩa",
+      "email": "nghialm@gmail.vn",
+      "tel": "01231234111",
+      "age": 23
+    },
+    {
+      "id": 4,
+      "name": "Phạm Thị Thủy",
+      "email": "thuypt@gmail.vn",
+      "tel": "01238678456",
+      "age": 29
+    }
+  ]
+}
