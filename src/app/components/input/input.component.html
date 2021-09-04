@@ -2,5 +2,27 @@
   <div class="atom-input__title">
     {{ title }}
   </div>
-  <input class="atom-input__content" [type]="type" [value]="value" />
+  <input
+    class="atom-input__content"
+    [type]="type"
+    [formControl]="formControl"
+  />
+  <div *ngIf="formControl?.invalid && (formControl?.dirty || formControl?.touched)"
+    class="error-validation">
+    <div *ngIf="formControl?.errors?.required">
+      Field is required.
+    </div>
+    <div *ngIf="formControl?.errors?.email">
+      Email is not valid.
+    </div>
+    <div *ngIf="formControl?.errors?.minlength">
+      Field must be at least 4 characters long.
+    </div>
+    <div *ngIf="formControl?.errors?.maxlength">
+      Field must have no more than 12 characters.
+    </div>
+    <div *ngIf="formControl?.errors?.isMatchPassword">
+      Confirm password must match password.
+    </div>
+  </div>
 </div>

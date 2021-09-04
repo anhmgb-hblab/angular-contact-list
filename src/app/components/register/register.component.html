@@ -1,8 +1,8 @@
-<div class="card fixed-centered register">
+<form class="card fixed-centered register">
   <div class="title">Register</div>
-  <app-input title="Email" type="text" value="" ></app-input>
-  <app-input title="Password" type="password" value="" ></app-input>
-  <app-input title="Confirm Password" type="password" value="" ></app-input>
-  <app-button class="register__submit-button" text="Register" [fullWidth]=true></app-button>
-  <div class="register__login interact-element">Already registered?</div>
-</div>
+  <app-input title="Email" [control]="formGroup.controls.email"></app-input>
+  <app-input title="Password" type="password" [control]="formGroup.controls.password"></app-input>
+  <app-input title="Confirm password" type="password" [control]="formGroup.controls.confirmPassword"></app-input>
+  <app-button class="register__submit-button" text="Register" [fullWidth]=true (onClick)="handleRegister()"></app-button>
+  <a routerLink="/login" class="register__login interact-element">Already registered?</a>
+</form>

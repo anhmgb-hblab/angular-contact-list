@@ -3,6 +3,7 @@
   --primary: #3f51b5;
   --secondary: #ff4081;
   --main-background: #eeeeee;
+  --error: #f44336;
 }
 
 html {
@@ -42,5 +43,23 @@ body {
   &:hover {
     cursor: pointer;
     filter: brightness(0.9);
+  }
+}
+
+.error-validation {
+  margin: 4px 0 12px;
+  color: var(--error);
+}
+
+.atom-input {
+  margin-bottom: 12px;
+  
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 4px;
   }
 }

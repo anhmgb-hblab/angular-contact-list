@@ -2,6 +2,8 @@
   width: 360px;
 
   &__login {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 12px;
     color: var(--primary);
   }

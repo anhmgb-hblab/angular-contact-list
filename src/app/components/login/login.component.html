@@ -1,8 +1,7 @@
-<div class="card fixed-centered login">
+<form [formGroup]="formGroup" class="card fixed-centered login">
   <div class="title">Login</div>
-  <app-input title="Email" type="text" value="" ></app-input>
-  <app-input title="Password" type="password" value="" ></app-input>
-  <app-button class="login__submit-button" text="Login" [fullWidth]=true></app-button>
-  <div class="login__register interact-element">Don't have an account yet?</div>
-</div>
-
+  <app-input title="Email" [control]="formGroup.controls.email"></app-input>
+  <app-input title="Password" type="password" [control]="formGroup.controls.password"></app-input>
+  <app-button class="login__submit-button" text="Login" [fullWidth]=true (onClick)="handleLogin()"></app-button>
+  <a routerLink="/register" class="login__register interact-element">Don't have an account yet?</a>
+</form>
