@@ -1,0 +1,13 @@
+.not-found {
+  font-weight: bold;
+  text-align: center;
+
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    font-size: 2rem;
+  }
+}

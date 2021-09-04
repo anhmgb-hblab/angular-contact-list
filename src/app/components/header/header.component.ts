@@ -18,5 +18,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  isLoggedIn() {
+    const unAuthorizedRoutes = ['/login', '/register'];
+    return !unAuthorizedRoutes.includes(this.router.url);
+  }
 }
  
