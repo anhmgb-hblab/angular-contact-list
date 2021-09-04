@@ -1,3 +1,3 @@
-<div class="contact-list">
+<div *ngIf="contacts.length" class="contact-list">
   <app-contact *ngFor="let contact of contacts" [contact]="contact"></app-contact>
 </div>

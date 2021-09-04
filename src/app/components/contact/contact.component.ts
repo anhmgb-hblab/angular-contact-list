@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Contact } from '../../models/Contact';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -14,9 +15,12 @@ export class ContactComponent implements OnInit {
     age: 20,
   };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  handleClickContact(contact: Contact) {
+    this.router.navigate([`/contacts/${contact.id}`])
+  }
 }
