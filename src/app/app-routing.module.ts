@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthenticationGuard } from './guards/authentication.guard';
 
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { ContactListComponent } from './components/contact-list/contact-list.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
-import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ContactListComponent } from './pages/contact-list/contact-list.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
