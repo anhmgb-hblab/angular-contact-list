@@ -17,6 +17,7 @@ import { InputComponent } from './components/input/input.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ContactDetailComponent } from './components/contact-detail/contact-deta
     InputComponent,
     RegisterComponent,
     NotFoundComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs';
+import { removeUsername, setAuthenticated } from '../../helpers/localStorage';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.usernameSubscription = this.auth.currentUsername.subscribe(username => this.username = username)
+    this.usernameSubscription = this.auth.currentUsername.subscribe(username => this.username = username);
   }
   
   ngOnDestroy(): void {
@@ -25,13 +26,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   handleLogout(): void {
     this.auth.handleRemoveUsernameAfterLogout();
-    window.localStorage.setItem('isAuthenticated', 'false');
+    setAuthenticated('false');
+    removeUsername();
     this.router.navigate(['/login']);
   }
 
   isLoggedIn() {
     const unAuthorizedRoutes = ['/login', '/register'];
     return !unAuthorizedRoutes.includes(this.router.url);
+  }
+
+  handleNavigateListContactPage() {
+    this.router.navigate(['/contacts']);
+  }
+
+  handleNavigateAboutPage() {
+    this.router.navigate(['/about']);
   }
 }
  

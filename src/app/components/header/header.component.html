@@ -1,7 +1,12 @@
 <div class="header">
-  <img class="header__logo" src="../../../assets/images/angular-3-logo-png-transparent.png" alt="logo" />
-  <div *ngIf="isLoggedIn()" class="header__left-action">
-    <div class="header__left-action__username">Hi, {{ username }}!</div>
+  <div class="header__left-action">
+    <img class="header__left-action__logo" src="../../../assets/images/angular-3-logo-png-transparent.png" alt="logo" />
+    <app-button class="header__left-action__nav" text="List contact" type="basic" (onClick)="handleNavigateListContactPage()"></app-button>
+    <app-button text="About me" type="basic" (onClick)="handleNavigateAboutPage()"></app-button>
+    <app-button></app-button>
+  </div>
+  <div *ngIf="isLoggedIn()" class="header__right-action">
+    <div class="header__right-action__username">Hi, {{ username }}!</div>
     <app-button text="Logout" (onClick)="handleLogout()"></app-button>
   </div>
 </div>

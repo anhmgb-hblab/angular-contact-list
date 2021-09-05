@@ -6,11 +6,21 @@
   padding: 8px 12px;
   background-color: white;
 
-  &__logo {
-    width: 200px;
+  &__left-action {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      width: 200px;
+      margin-right: 16px;
+    }
+
+    &__nav {
+      margin-right: 16px;
+    }
   }
 
-  &__left-action {
+  &__right-action {
     display: flex;
     align-items: center;
 

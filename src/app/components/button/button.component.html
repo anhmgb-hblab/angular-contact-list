@@ -1,6 +1,6 @@
 <button
   class="btn interact-element"
-  [class]="variant"
+  class="{{type}} {{variant}}"
   [ngClass]="{'full-width': fullWidth}"
   [disabled]="disabled"
   (click)="handleClick()"

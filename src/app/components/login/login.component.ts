@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import * as bcryptjs from 'bcryptjs';
 import { STATUS_FORM_ENUM } from '../../constants/form';
 import { AuthService } from '../../services/auth.service';
+import { setUsername, setAuthenticated } from '../../helpers/localStorage';
 
 @Component({
   selector: 'app-login',
@@ -58,7 +59,8 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.auth.handleChangeUsernameAfterLogin(user.email);
-    window.localStorage.setItem('isAuthenticated', 'true');
+    setAuthenticated('true');
+    setUsername(user.email);
     this.router.navigate(['/contacts']);
     return;
   }

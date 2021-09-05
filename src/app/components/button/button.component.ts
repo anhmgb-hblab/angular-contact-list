@@ -16,6 +16,7 @@ export class ButtonComponent implements OnInit {
   @Input() variant: string = 'primary';
   @Input() fullWidth: boolean = false;
   @Input() disabled: boolean = false;
+  @Input() type: string = 'contained';
   @Output() onClick = new EventEmitter();
 
   constructor() { }
