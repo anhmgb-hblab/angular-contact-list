@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../../models/User';
 import { Router } from '@angular/router';
 import * as bcryptjs from 'bcryptjs';
+import { STATUS_FORM_ENUM } from '../../constants/form';
 
 @Component({
   selector: 'app-register',
@@ -30,12 +31,24 @@ export class RegisterComponent implements OnInit {
     ])
   });
   isExisted = false;
+  isFormValid = false;
 
   private userApiUrl = 'http://localhost:5000/users';
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  watchFormChanges() {
+    this.formGroup.statusChanges.subscribe(status => {
+      if (status === STATUS_FORM_ENUM.VALID) {
+        this.isFormValid = true;
+      } else {
+        this.isFormValid = false;
+      }
+    })
+  }
+
   ngOnInit(): void {
+    this.watchFormChanges();
   }
 
   handleAuthentication(data) {

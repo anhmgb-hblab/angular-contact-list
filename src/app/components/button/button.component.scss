@@ -12,6 +12,16 @@
   cursor: pointer;
 }
 
+.btn[disabled] {
+  background-color: var(--disabled);
+  box-shadow: 0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%);
+  color: var(--gray-text);
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
 .primary {
   background-color: var(--primary);
 }

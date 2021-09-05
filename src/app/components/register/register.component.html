@@ -4,6 +4,12 @@
   <app-input title="Password" type="password" [control]="formGroup.controls.password"></app-input>
   <app-input title="Confirm password" type="password" [control]="formGroup.controls.confirmPassword"></app-input>
   <div *ngIf="isExisted" class="error-message">User is is existed</div>
-  <app-button class="register__submit-button" text="Register" [fullWidth]=true (onClick)="handleRegister()"></app-button>
+  <app-button
+    class="register__submit-button"
+    text="Register"
+    [fullWidth]=true
+    [disabled]="!isFormValid"
+    (onClick)="handleRegister()">
+  </app-button>
   <a routerLink="/login" class="register__login interact-element">Already registered?</a>
 </form>

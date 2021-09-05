@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  private usernameSource = new BehaviorSubject('');
+  currentUsername = this.usernameSource.asObservable();
+
   constructor() { }
 
-  handleLogin() {
-    console.log('logged in');
+  handleChangeUsernameAfterLogin(username: string) {
+    this.usernameSource.next(username);
   }
 
-  handleLogout() {
-    console.log('logged out');
+  handleRemoveUsernameAfterLogout() {
+    this.usernameSource.next('');
   }
 }

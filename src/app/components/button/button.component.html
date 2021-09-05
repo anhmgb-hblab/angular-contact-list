@@ -2,6 +2,7 @@
   class="btn interact-element"
   [class]="variant"
   [ngClass]="{'full-width': fullWidth}"
+  [disabled]="disabled"
   (click)="handleClick()"
 >
   {{ text }}

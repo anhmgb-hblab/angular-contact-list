@@ -1,6 +1,7 @@
 <div class="header">
   <img class="header__logo" src="../../../assets/images/angular-3-logo-png-transparent.png" alt="logo" />
   <div *ngIf="isLoggedIn()" class="header__left-action">
-    <app-button text="Logout" (onClick)="handleLogin()"></app-button>
+    <div class="header__left-action__username">Hi, {{ username }}!</div>
+    <app-button text="Logout" (onClick)="handleLogout()"></app-button>
   </div>
 </div>
