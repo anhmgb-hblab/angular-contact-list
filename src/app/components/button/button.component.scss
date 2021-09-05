@@ -8,6 +8,10 @@
   padding: 0 16px;
   user-select: none;
   cursor: pointer;
+
+  &__text {
+    font-family: "Montserrat";
+  }
 }
 
 .contained {

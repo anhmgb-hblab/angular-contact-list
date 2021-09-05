@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(./assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
+}
+
 :root {
   --primary: #3f51b5;
   --secondary: #ff4081;
@@ -18,6 +23,7 @@ html {
 body {
   margin: 0;
   background-color: var(--main-background);
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 .card {
